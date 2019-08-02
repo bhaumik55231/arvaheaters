@@ -51,3 +51,7 @@ h5 {
 .carousel-indicators li{
     background-color: #000 !important;
 }
+
+span {
+    white-space: nowrap;
+}
