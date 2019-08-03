@@ -53,7 +53,7 @@ h5 {
     background-color: #000 !important;
 }
 
-span {
+.no-warp {
     white-space: nowrap;
 }
 
