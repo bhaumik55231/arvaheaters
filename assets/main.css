@@ -70,7 +70,7 @@ span {
 }
 
 .main-container {
-    background-image: radial-gradient(at center center, rgb(248, 248, 248) 0%, rgb(223, 224, 224) 48%, rgb(209, 218, 211) 100%);
+    background-image: radial-gradient(at center center, rgb(248, 248, 248) 0%, rgb(223, 224, 224) 48%, rgb(199, 199, 199) 100%);
     padding: 0 0 2rem 0;
 }
 
