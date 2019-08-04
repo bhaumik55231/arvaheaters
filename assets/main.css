@@ -115,3 +115,13 @@ h5 {
 .carousel-control-next-icon, .carousel-control-prev-icon {
     background-color: #000000;
 }
+
+.col-sm {
+    margin-bottom: 0.5rem;
+}
+
+.heater-type {
+    font-weight: bold;
+    color: #313680;
+    font-size: 1.5rem;
+}
