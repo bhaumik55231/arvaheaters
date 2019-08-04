@@ -2,6 +2,10 @@ window.onload = () => {
     main();
 };
 
+window.onscroll = () => {
+    schrollFunction();
+}
+
 const main = () => {
     const navItem = document.getElementsByClassName('nav-item');
     Array.from(navItem).forEach(element => {
@@ -61,64 +65,64 @@ const productSlider = () => {
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/01.jpg" height="550px" width="100%" alt="First slide">
+                    <img class="d-block w-100" src="assets/01.jpg" height="600px" width="100%" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/02.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/02.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/11.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/11.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/15.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/15.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/16.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/16.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/20.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/20.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/03.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/03.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/12.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/12.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/13.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/13.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/24.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/24.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/25.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/25.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/26.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/26.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/28.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/28.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/29.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/29.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/30.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/30.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/05.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/05.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/06.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/06.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/09.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/09.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/18.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/18.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/19.jpg" height="550px" width="100%" alt="Second slide">
+                    <img class="d-block w-100" src="assets/19.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -220,4 +224,12 @@ const productGrid = () => {
             </div>
         </div>
     `;
+}
+
+const schrollFunction = () => {
+    if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        document.getElementById("arrowUp").style.display = "block";
+    } else {
+    document.getElementById("arrowUp").style.display = "none";
+    }
 }

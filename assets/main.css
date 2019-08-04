@@ -129,3 +129,14 @@ h5 {
 .carousel-indicators {
     top: 1rem;
 }
+
+.arrow-up {
+    right: 1.5rem;
+    position: fixed;
+    bottom: 2rem;
+}
+
+#arrowUp {
+    display: none;
+    color: #000000;
+}
