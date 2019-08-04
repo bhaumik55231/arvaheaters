@@ -140,3 +140,7 @@ h5 {
     display: none;
     color: #000000;
 }
+
+#home, #products, #contactus {
+    padding-top: 3rem;
+}
