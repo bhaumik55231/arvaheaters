@@ -111,3 +111,7 @@ h5 {
     color: #313680;
     font-weight: bold;
 }
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: #000000;
+}
