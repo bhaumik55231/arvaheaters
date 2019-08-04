@@ -59,7 +59,7 @@ h5 {
 
 .footer {
     margin: 0;
-    background-color: #343a40;
+    background-color: #f8f9fa;
     height: 4rem;
 }
 
@@ -67,7 +67,7 @@ h5 {
     width: 100%;
     padding-top: 1rem;
     text-align: center;
-    color: #ffffff;
+    color: #000000;
 }
 
 .main-container {
@@ -100,4 +100,14 @@ h5 {
 .image-border {
     border: 0.5px solid #343a40;
     padding: 0.5px
+}
+
+.arva {
+    color: #25632e;
+    font-weight: bold;
+}
+
+.heaters {
+    color: #313680;
+    font-weight: bold;
 }
