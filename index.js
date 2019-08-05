@@ -64,25 +64,8 @@ const productSlider = () => {
             </ol>
 
             <div class="carousel-inner">
+
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/images/01.jpg" height="600px" width="100%" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/02.jpg" height="600px" width="100%" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/11.jpg" height="600px" width="100%" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/15.jpg" height="600px" width="100%" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/16.jpg" height="600px" width="100%" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/20.jpg" height="600px" width="100%" alt="Second slide">
-                </div>
-                <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/03.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
                 <div class="carousel-item">
@@ -109,6 +92,27 @@ const productSlider = () => {
                 <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/30.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
+
+
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/01.jpg" height="600px" width="100%" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/02.jpg" height="600px" width="100%" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/11.jpg" height="600px" width="100%" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/15.jpg" height="600px" width="100%" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/16.jpg" height="600px" width="100%" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/20.jpg" height="600px" width="100%" alt="Second slide">
+                </div>
+                
                 <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/05.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
@@ -118,6 +122,8 @@ const productSlider = () => {
                 <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/09.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
+
+                
                 <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/18.jpg" height="600px" width="100%" alt="Second slide">
                 </div>
@@ -139,30 +145,6 @@ const productSlider = () => {
 
 const productGrid = () => {
     return `
-        <span class="heater-type">Mica Band Heaters</span>
-        <div class="row">
-            <div class="col-sm">
-                <img src="assets/images/01.jpg" class="image-border" height="200px" width="100%" alt="First grid"></br>
-            </div>
-            <div class="col-sm">
-                <img src="assets/images/02.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
-            </div>
-            <div class="col-sm">
-                <img src="assets/images/11.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <img src="assets/images/15.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
-            </div>
-            <div class="col-sm">
-                <img src="assets/images/16.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
-            </div>
-            <div class="col-sm">
-                <img src="assets/images/20.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
-            </div>
-        </div>
-
         <span class="heater-type">Ceramic Heaters</span>
         <div class="row">
             <div class="col-sm">
@@ -195,6 +177,30 @@ const productGrid = () => {
             </div>
             <div class="col-sm">
                 <img src="assets/images/30.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
+            </div>
+        </div>
+
+        <span class="heater-type">Mica Band Heaters</span>
+        <div class="row">
+            <div class="col-sm">
+                <img src="assets/images/01.jpg" class="image-border" height="200px" width="100%" alt="First grid"></br>
+            </div>
+            <div class="col-sm">
+                <img src="assets/images/02.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
+            </div>
+            <div class="col-sm">
+                <img src="assets/images/11.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img src="assets/images/15.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
+            </div>
+            <div class="col-sm">
+                <img src="assets/images/16.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
+            </div>
+            <div class="col-sm">
+                <img src="assets/images/20.jpg" class="image-border" height="200px" width="100%" alt="Second grid"></br>
             </div>
         </div>
 
