@@ -20,4 +20,4 @@ registerRoute(/\.(?:png|jpg|jpeg|svg|gif|ico)$/,
     })
 );
 
-workbox.precaching.precacheAndRoute([{url: 'index.html', revision: `4`}]);
+workbox.precaching.precacheAndRoute([{url: 'index.html', revision: `2`}]);
