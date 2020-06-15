@@ -155,6 +155,10 @@ h5 {
     padding-top: 8px;
 }
 
+.fa-file-download {
+    margin-left: 5px;
+}
+
 #sendEmail {
     margin-left: 5px;
     padding-top: 6px;
@@ -162,4 +166,9 @@ h5 {
 
 .submit-btn {
     margin-left: 5px;
+}
+
+.product-catalogue {
+    padding-left: 15px;
+    padding-right: 15px;
 }
