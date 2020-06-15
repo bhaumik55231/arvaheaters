@@ -7,6 +7,14 @@ window.onscroll = () => {
 }
 
 const main = () => {
+    if('serviceWorker' in navigator){
+        try {
+            navigator.serviceWorker.register('./serviceWorker.js');
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     const navItem = document.getElementsByClassName('nav-item');
     Array.from(navItem).forEach(element => {
         element.addEventListener('click', () => {
