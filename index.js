@@ -26,8 +26,7 @@ exports.sendEmail = (req, res) => {
     const msg = {
         to: email,
         from: 'arvaheaters@gmail.com',
-        subject: 'Arva Heaters Products Catalogue',
-        text: 'Please see attached product catalogue.',
+        templateId: 'd-2addbdd0e4b14edf821382d58cd62192',
         attachments: [
             {
                 content: attachment,
