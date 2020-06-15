@@ -1,6 +1,7 @@
 exports.senEmail = (req, res) => {
     const allowedOrigins = ['http://localhost:8001', 'https://arvaheaters.com'];
     const origin = req.headers.origin;
+    console.log(origin)
     if (allowedOrigins.indexOf(origin) !== -1) {
         res.setHeader('Access-Control-Allow-Origin', origin);
         res.header('Access-Control-Allow-Headers', 'Accept,Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,Authorization');
