@@ -1,5 +1,5 @@
 exports.senEmail = (req, res) => {
-    const allowedOrigins = ['http://localhost:8001', 'https://arvaheaters.com'];
+    const allowedOrigins = ['http://localhost:8001', 'https://www.arvaheaters.com'];
     const origin = req.headers.origin;
     console.log(origin)
     if (allowedOrigins.indexOf(origin) !== -1) {

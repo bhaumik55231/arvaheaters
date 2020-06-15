@@ -60,6 +60,7 @@ const addEventSubmit = () => {
         };
         fetch(`https://us-central1-bhaumikpersonalproject.cloudfunctions.net/catalogue`, requestObj);
         const element = document.getElementsByClassName('fa-envelope-square')[0];
+        document.getElementById('email').value = '';
         form.hidden = true;
         element.hidden = false;
     });
