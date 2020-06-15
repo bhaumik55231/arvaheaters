@@ -15,7 +15,7 @@ exports.senEmail = (req, res) => {
     }
     if (req.body === undefined) return res.status(400).json(getResponseJSON('Bad request!', 400));
     const email = req.body.email;
-    console.log(req.body)
+    if(email === undefined) return res.status(400).json(getResponseJSON('Bad request!', 400));
     console.log(email)
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -25,9 +25,8 @@ exports.senEmail = (req, res) => {
     const msg = {
         to: email,
         from: 'arvaheaters@gmail.com',
-        subject: 'Sending with Twilio SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        subject: 'Arva Heaters Products Catalogue',
+        text: 'Please see attached product catalogue.',
         attachments: [
             {
                 content: attachment,

@@ -36,7 +36,34 @@ const main = () => {
         document.getElementById('productContent').innerHTML = productGrid();
     });
     slider.dispatchEvent(new Event('click'));
+    addEventEmail();
+    addEventSubmit();
 };
+
+const addEventEmail = () => {
+    const element = document.getElementsByClassName('fa-envelope-square')[0];
+    element.addEventListener('click', () => {
+        const form = document.getElementById('sendEmail');
+        form.hidden = false;
+        element.hidden = true;
+    })
+}
+
+const addEventSubmit = () => {
+    const form = document.getElementById('sendEmail');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        let requestObj = {
+            method: "POST",
+            body: JSON.stringify({email})
+        };
+        fetch(`https://us-central1-bhaumikpersonalproject.cloudfunctions.net/catalogue`, requestObj);
+        const element = document.getElementsByClassName('fa-envelope-square')[0];
+        form.hidden = true;
+        element.hidden = false;
+    });
+}
 
 const removeActiveClass = (className, activeClass) => {
     let fileIconElement = document.getElementsByClassName(className);

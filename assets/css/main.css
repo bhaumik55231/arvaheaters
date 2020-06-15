@@ -144,3 +144,18 @@ h5 {
 #home, #products, #contactus {
     padding-top: 3rem;
 }
+
+.fa-envelope-square:hover {
+    cursor: pointer;
+    color: #181819;
+}
+
+.fa-envelope-square {
+    margin-left: 5px;
+    padding-top: 10px;
+}
+
+#sendEmail {
+    margin-left: 5px;
+    padding-top: 6px;
+}
