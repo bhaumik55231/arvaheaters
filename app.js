@@ -56,9 +56,13 @@ const addEventSubmit = () => {
         const email = document.getElementById('email').value;
         let requestObj = {
             method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({email})
         };
         fetch(`https://us-central1-bhaumikpersonalproject.cloudfunctions.net/catalogue`, requestObj);
+        // fetch(`http://localhost:8010/nih-nci-dceg-episphere-dev/us-central1/sendEmail`, requestObj);
         const element = document.getElementsByClassName('fa-envelope-square')[0];
         document.getElementById('email').value = '';
         form.hidden = true;

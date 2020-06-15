@@ -1,7 +1,7 @@
-exports.senEmail = (req, res) => {
+exports.sendEmail = (req, res) => {
     const allowedOrigins = ['http://localhost:8001', 'https://www.arvaheaters.com'];
     const origin = req.headers.origin;
-    console.log(origin)
+    console.log(origin);
     if (allowedOrigins.indexOf(origin) !== -1) {
         res.header('Access-Control-Allow-Origin', origin);
         res.header('Access-Control-Allow-Headers', 'Accept,Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,Authorization');
@@ -12,11 +12,11 @@ exports.senEmail = (req, res) => {
     });
 
     if (req.method !== 'POST') {
-        return res.status(405).json(getResponseJSON('Only POST requests are accepted!', 405));
+        return res.status(405).json({message: 'Only POST requests are accepted!', code: 405});
     }
-    if (req.body === undefined) return res.status(400).json(getResponseJSON('Bad request!', 400));
+    if (req.body === undefined) return res.status(400).json({message: 'Bad request!', code: 400});
     const email = req.body.email;
-    if(email === undefined) return res.status(400).json(getResponseJSON('Bad request!', 400));
+    if(email === undefined) return res.status(400).json({message: 'Bad request!', code: 400});
     console.log(email)
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
