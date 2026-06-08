@@ -1,98 +1,984 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104295143-6"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arva Heaters | Industrial Heating Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #246b28;
+            --blue: #263294;
+            --blue-dark: #1b2470;
+            --light: #f5f7fa;
+            --text: #161c2d;
+            --muted: #687086;
+            --green: #246b28;
+            --green-dark: #1a5020;
+            --border: #dde3f0;
+        }
 
-            gtag('config', 'UA-104295143-6');
-        </script>
-        <link rel="manifest" href="./manifest.json">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Arva Heaters</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="shortcut icon" href="assets/images/logo.png">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="app.js"></script>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="#"><img height="30px" width="30px" src="assets/images/logo.png"><span class="arva">Arva</span> <span class="heaters">Heaters</span></a> 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#home" title="Home"><i class="fas fa-industry"></i> About Us</a>
-                    <a class="nav-item nav-link" href="#products" title="Products"><i class="fas fa-toolbox"></i> Products</a>
-                    <a class="nav-item nav-link" href="#contactus" title="Contact Us"><i class="far fa-address-book"></i> Contact Us</a>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ══════════════════════════════════
+           NAVBAR — full width, broad, tall
+        ══════════════════════════════════ */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 20px rgba(38,50,148,0.08);
+            z-index: 1000;
+            height: 90px;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-container img { height: 56px; }
+
+        .logo-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: var(--blue);
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .logo-name span { color: var(--green); }
+
+        .logo-tagline {
+            font-size: 0.68rem;
+            color: var(--muted);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            position: relative;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.25s;
+            padding-bottom: 4px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2.5px;
+            background: var(--green);
+            border-radius: 2px;
+            transition: 0.25s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active { color: var(--green); }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after { width: 100%; }
+
+        .nav-btn {
+            background: var(--green);
+            color: white;
+            padding: 13px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(36,107,40,0.25);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 90px;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px 20px;
+            z-index: 998;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(38,50,148,0.10);
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            padding: 14px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .mobile-menu a:hover { color: var(--green); }
+
+        .mobile-menu .mob-btn {
+            border-bottom: none;
+            margin-top: 12px;
+            background: var(--green);
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            padding: 13px;
+            font-weight: 700;
+        }
+
+        /* ══════════════════════════════════
+           SECTION SPACING — tighter
+        ══════════════════════════════════ */
+        section { padding: 40px 0; }
+
+        /* ══════════════════════════════════
+           PRODUCTS MARQUEE
+        ══════════════════════════════════ */
+        .product-showcase {
+            background-color: #fcfcfc;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 40px 0 40px 60px !important;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .left-block {
+            flex: 0 0 22%;
+            z-index: 2;
+            padding-right: 20px;
+        }
+
+        .left-block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--blue);
+            line-height: 1.05;
+        }
+
+        .left-block p {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        .right-block {
+            flex: 0 0 78%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fade edges */
+        .right-block::before,
+        .right-block::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 60px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .right-block::before {
+            left: 0;
+            background: linear-gradient(to right, #fcfcfc, transparent);
+        }
+
+        .right-block::after {
+            right: 0;
+            background: linear-gradient(to left, #fcfcfc, transparent);
+        }
+
+        /* Pure CSS infinite marquee */
+        @keyframes marqueeScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 20px;
+            padding: 10px 4px;
+            width: max-content;
+            animation: marqueeScroll 90s linear infinite;
+            cursor: pointer;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .product-card {
+            width: 230px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 14px 14px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            flex-shrink: 0;
+            transition: 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(38,50,148,0.11);
+            border-color: rgba(38,50,148,0.14);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: var(--blue);
+            font-weight: 700;
+            font-size: 0.88rem;
+            line-height: 1.3;
+        }
+
+        /* ══════════════════════════════════
+           ABOUT — full width
+        ══════════════════════════════════ */
+        .about-section {
+            background: linear-gradient(135deg, rgba(38,50,148,0.03) 0%, rgba(36,107,40,0.04) 100%), #f8f9fd;
+            padding: 52px 60px;
+            width: 100%;
+        }
+
+        .about-inner {
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 2fr auto;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-left h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--blue);
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .about-badge {
+            display: inline-block;
+            padding: 7px 16px;
+            border-radius: 50px;
+            background: rgba(36,107,40,0.10);
+            color: var(--green);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            cursor: default;
+        }
+
+        .about-badge:hover {
+            background: rgba(36,107,40,0.20);
+        }
+
+        .about-divider {
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green), #49a34d);
+            border-radius: 4px;
+            margin: 14px 0;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .about-cta {
+            display: inline-block;
+            padding: 12px 26px;
+            border-radius: 10px;
+            background: var(--blue);
+            color: #fff;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .about-cta:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(36,107,40,0.22);
+        }
+
+        /* ══════════════════════════════════
+           INDUSTRIES — with images
+        ══════════════════════════════════ */
+        .industries-section {
+            padding: 44px 60px;
+            background: #fff;
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .section-head h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--blue);
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .industry-card {
+            background: #f8f9fd;
+            border: 1px solid #edf0fb;
+            border-radius: 16px;
+            padding: 28px 16px 20px;
+            text-align: center;
+            transition: 0.3s ease;
+            cursor: default;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-6px);
+            background: #fff;
+            box-shadow: 0 16px 36px rgba(38,50,148,0.09);
+            border-color: rgba(38,50,148,0.15);
+        }
+
+        .industry-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: white;
+            border: 1px solid #edf0fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(38,50,148,0.07);
+            transition: 0.3s;
+        }
+
+        .industry-card:hover .industry-icon {
+            background: var(--green);
+            border-color: var(--green);
+            box-shadow: 0 8px 20px rgba(36,107,40,0.22);
+        }
+
+        .industry-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 4px;
+        }
+
+        .industry-card p {
+            font-size: 0.80rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ══════════════════════════════════
+           FOOTER — full business footer
+        ══════════════════════════════════ */
+        .site-footer {
+            background: var(--blue-dark, #1b2470);
+            color: rgba(255,255,255,0.80);
+            padding: 48px 60px 24px;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+            gap: 44px;
+            padding-bottom: 16px;
+            border-bottom: none;
+
+        /* Brand column */
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            text-decoration: none;
+        }
+
+        .footer-brand .footer-logo img {
+            height: 54px;
+            background: #fff;
+            padding: 8px 14px;
+            border-radius: 10px;
+        }
+
+        .footer-brand .footer-logo-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-brand p {
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.65);
+            max-width: 280px;
+            margin-bottom: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.25s;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .social-btn:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: #fff;
+        }
+
+        /* Link columns */
+        .footer-col h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul { list-style: none; }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.85rem;
+            font-family: 'Poppins', sans-serif;
+            color: rgba(255,255,255,0.58);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #7ee885;
+            padding-left: 4px;
+        }
+
+        /* Contact column */
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .footer-contact-item .contact-text strong {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            font-family: 'Sora', sans-serif;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .footer-contact-item .contact-text span {
+            font-size: 0.84rem;
+            font-family: 'Poppins', sans-serif;
+            color: rgba(255,255,255,0.80);
+        }
+
+        /* Footer bottom */
+        .footer-bottom {
+            padding-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.42);
+        }
+
+        .footer-bottom a {
+            color: rgba(255,255,255,0.42);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-bottom a:hover { color: #7ee885; }
+
+        /* ══════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════ */
+        @media (max-width: 1100px) {
+            .industries-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .about-inner { grid-template-columns: 1fr 1.5fr; }
+            .about-cta-col { grid-column: span 2; text-align: center; }
+        }
+
+        @media (max-width: 992px) {
+            nav { padding: 0 24px; }
+            .product-showcase { padding: 32px 0 32px 24px !important; }
+            .left-block { flex: 0 0 28%; }
+            .about-section { padding: 40px 24px; }
+            .industries-section { padding: 40px 24px; }
+            .site-footer { padding: 44px 24px 24px; }
+            .about-inner { grid-template-columns: 1fr; gap: 24px; }
+            .about-cta-col { grid-column: auto; text-align: left; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            nav .nav-btn { display: none; }
+            .hamburger { display: flex; }
+            .product-showcase { flex-direction: column; padding: 28px 16px !important; }
+            .left-block { flex: none; width: 100%; padding-right: 0; margin-bottom: 20px; }
+            .right-block { flex: none; width: 100%; }
+            .industries-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            nav { height: 72px; }
+            .mobile-menu { top: 72px; }
+            .industries-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav>
+    <a href="index.html" class="logo-container">
+        <img src="images/logo21.png" alt="Arva Heaters Logo">
+    </a>
+
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <a class="nav-btn" href="contact.html">Get Quote</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="applications.html">Applications</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mob-btn">Get Quote</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     PRODUCTS — single set, JS infinite scroll
+══════════════════════════════════════ -->
+<section class="product-showcase" id="products">
+
+    <div class="left-block">
+        <h2>Our<br>Products</h2>
+    </div>
+
+    <div class="right-block">
+        <div class="marquee-track" id="marqueeTrack">
+            <a class="product-card" href="ceramic.html#ceramic-power-saver">
+                <img src="images/ceramic.png" alt="Ceramic Heater Power Saver">
+                <p>Ceramic Heater (Power Saver)</p>
+            </a>
+            <a class="product-card" href="ceramic.html#ceramic-air-cooled">
+                <img src="images/ceramicheater.png" alt="Ceramic Heater Air Cooled">
+                <p>Ceramic Heater (Air Cooled)</p>
+            </a>
+            <a class="product-card" href="ceramic.html#ceramic-heater">
+                <img src="images/ceramic1.png" alt="Ceramic Heater">
+                <p>Ceramic Heater</p>
+            </a>
+            <a class="product-card" href="ceramic.html#ceramic-band">
+                <img src="images/ceramicband.png" alt="Ceramic Band Heater">
+                <p>Ceramic Band Heater</p>
+            </a>
+            <a class="product-card" href="ceramic.html#ceramic-flange">
+                <img src="images/ceramicflage1.png" alt="Ceramic Flange Heater">
+                <p>Ceramic Flange Heater</p>
+            </a>
+            <a class="product-card" href="mica.html">
+                <img src="images/mica.png" alt="Mica Band Heater">
+                <p>Mica Band Heater</p>
+            </a>
+            <a class="product-card" href="mica.html#mica-plate">
+                <img src="images/micaplate.png" alt="Mica Plate Heater">
+                <p>Mica Plate Heater</p>
+            </a>
+            <a class="product-card" href="mica.html#semi-circular-mica">
+                <img src="images/semimica.png" alt="Semi Circular Mica Heater">
+                <p>Semi Circular Mica Heater</p>
+            </a>
+            <a class="product-card" href="tubular.html#tubular-heater">
+                <img src="images/tubular.png" alt="Tubular Heater">
+                <p>Tubular Heater</p>
+            </a>
+            <a class="product-card" href="tubular.html#tubular-fins">
+                <img src="images/tubularfins.png" alt="Tubular Fins Heater">
+                <p>Tubular Fins Heater</p>
+            </a>
+            <a class="product-card" href="immersion.html#immersion-heater">
+                <img src="images/immersion.png" alt="Immersion Heater">
+                <p>Immersion Heater</p>
+            </a>
+            <a class="product-card" href="cartridge.html#cartridge-heater">
+                <img src="images/cartridge1.png" alt="Cartridge Heater">
+                <p>Cartridge Heater</p>
+            </a>
+        </div>
+    </div>
+
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT — full width
+══════════════════════════════════════ -->
+<section class="about-section" id="about">
+    <div class="about-inner">
+
+        <div class="about-left">
+            <h2>About<br>Us</h2>
+            <div class="about-divider"></div>
+            <span class="about-badge">Since 2006</span>
+            <div style="margin-top:14px;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:2.5px;color:var(--green);text-transform:uppercase;">HEAT THAT REFLECTS QUALITY</div>
+        </div>
+
+        <div class="about-text">
+            <p>
+                At Arva Heaters, we are committed to redefining industrial heating technology through innovation,
+                precision engineering, and uncompromising quality. Since 2006, we have been delivering reliable,
+                efficient, and customized industrial heating solutions designed to meet the evolving demands of
+                industries across diverse sectors.
+            </p>
+            <p style="margin-top:14px;">
+                Our strength lies in understanding the unique operational requirements of every client and developing
+                heating solutions that align perfectly with their technical specifications and production goals.
+                Supported by advanced infrastructure and a highly experienced technical team, we continuously
+                upgrade our manufacturing capabilities to stay aligned with modern industry standards.
+            </p>
+        </div>
+
+        <div class="about-cta-col">
+            <a href="about.html" class="about-cta">Read More →</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     INDUSTRIES — with icons + descriptions
+══════════════════════════════════════ -->
+<section class="industries-section" id="industries">
+
+    <div class="section-head">
+        <h2>Industries We Serve</h2>
+        <p>Trusted by Leading Industrial Sectors</p>
+    </div>
+
+    <div class="industries-grid">
+
+        <div class="industry-card">
+            <div class="industry-icon">🧱</div>
+            <h3>Plastic</h3>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-icon">🛒</div>
+            <h3>FMCG</h3>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-icon">⚗️</div>
+            <h3>Chemical</h3>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-icon">💊</div>
+            <h3>Pharmaceutical</h3>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-icon">📦</div>
+            <h3>Packaging</h3>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-icon">🔵</div>
+            <h3>Rubber</h3>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-icon">🍽️</div>
+            <h3>Food Manufacturing</h3>
+        </div>
+
+        <div class="industry-card">
+            <div class="industry-icon">🚗</div>
+            <h3>Automobile</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER — full business footer
+══════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+                <img src="images/logo21.png" alt="Arva Heaters" style="height:52px;background:#fff;padding:8px 16px;border-radius:12px;">
+            </a>
+            <p>
+                Since 2006, we've been crafting precision heating solutions that industries trust for reliability, efficiency, and excellence.
+            </p>
+            <div class="footer-socials">
+                <a href="https://wa.me/919879520550" class="social-btn" title="WhatsApp" target="_blank">💬</a>
+                <a href="mailto:arvaheaters@gmail.com" class="social-btn" title="Email">✉</a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="applications.html">Applications</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Products -->
+        <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="ceramic.html#ceramic-power-saver">Ceramic Heater</a></li>
+                <li><a href="mica.html">Mica Heater</a></li>
+                <li><a href="tubular.html#tubular-heater">Tubular Heater</a></li>
+                <li><a href="immersion.html#immersion-heater">Immersion Heater</a></li>
+                <li><a href="cartridge.html#cartridge-heater">Cartridge Heater</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+
+            <div class="footer-contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-text">
+                    <strong>Address</strong>
+                    <span>3, Prathna Estate, Jamfalwadi Rd, C.T.M, Amraiwadi, Ahmedabad, Gujarat 380026, India</span>
                 </div>
             </div>
-        </nav>
-        <div class="main-container">
-            <div class="container">
-                <div id="home">
-                    <div class="row">
-                        <div class="col heading">About Us</div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            We at Arva Heaters expertize in making high quality Industrial heaters backed by a highly dedicated team with 15 years of Industrial experience. 
-                            We are commited to deliver high quality products that fulfills our customer requirements. We design and manufacture wide range of products, please slide through our product catalogue for more details.
-                        </div>
-                    </div>
-                </div>
-                <div id="products">
-                    <div class="row">
-                        <div class="col-sm-10 heading">
-                            <div class="row product-catalogue">
-                                Products <a title="Product Brochure" href="brochure.pdf" download="arva_heaters_brochure.pdf" class="product-href"><i class="fas fa-file-download"></i></a> 
-                                <form id="sendEmail" class="form-inline" hidden=true method="POST">
-                                    <input class="form-control" type="email" id="email" placeholder="abc@aaa.com" required> 
-                                    <button class="btn btn-light submit-btn" type="submit">Send brochure</button>
-                                </form><i title="Email product catalogue" class="fas fa-envelope-square"></i></div>
-                            </div>
-                        <div class="col-sm-2 heading align-right">
-                            <a href="#" class="product-href" title="Slider" id="silder"><i class="fas fa-square active"></i></a> 
-                            <a href="#" class="product-href" title="Grid View" id="grid"><i class="fas fa-th-large"></i></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col" id="productContent"></div>
-                    </div>
-                </div>
-                <div id="contactus">
-                    <div class="row">
-                        <div class="col heading">Contact Us</div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <span class="no-warp"><i class="fas fa-user-tie"></i> Vimesh Patel</span></br>
-                            <span class="no-warp"><i class="fas fa-at"></i> arvaheaters@gmail.com</span></br>
-                            <span class="no-warp"><i class="fas fa-mobile-alt"></i> +91 - 9879520550</span></br>
-                            
-                        </div>
-                        <div class="col align-right">
-                            3, Prathna Estate, Jamfalwadi Rd,</br>
-                            C.T.M, Amraiwadi, Ahmedabad,</br>
-                            Gujarat 380026, India
-                        </div>
-                    </div>
+
+            <div class="footer-contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-text">
+                    <strong>Phone</strong>
+                    <a href="tel:+919879520550" style="color:rgba(255,255,255,0.80);text-decoration:none;">+91 9879520550</a>
                 </div>
             </div>
-            <div class="align-right arrow-up"><a href="#" id="arrowUp" title="Go to top"><i class="fas fa-3x fa-arrow-circle-up"></i></a></div>
+
+            <div class="footer-contact-item">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-text">
+                    <strong>Email</strong>
+                    <a href="mailto:arvaheaters@gmail.com" style="color:rgba(255,255,255,0.80);text-decoration:none;">arvaheaters@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="footer-contact-item">
+                <div class="contact-icon">🕒</div>
+                <div class="contact-text">
+                    <strong>Working Hours</strong>
+                    <span>Mon–Sat, 9 AM – 6 PM</span>
+                </div>
+            </div>
         </div>
-        
-        <div id="footer" class="row footer">
-            <div class="copyright"><i class="fas fa-copyright"></i> All Rights Reserved 2019 <span class="arva">Arva</span> <span class="heaters">Heaters</span><div>
-        </div>
-    </body>
+
+    </div>
+    <p style="text-align:center;font-size:0.82rem;color:rgba(255,255,255,0.42);padding-top:16px;margin:0;">© 2026 ARVA Heaters. All rights reserved.</p>
+</footer>
+
+<script>
+    /* ── Hamburger ── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+        });
+    });
+
+    /* Clone cards so CSS animation loops seamlessly */
+    (function () {
+        const track = document.getElementById('marqueeTrack');
+        if (!track) return;
+        const originals = Array.from(track.children);
+        originals.forEach(card => track.appendChild(card.cloneNode(true)));
+    })();
+</script>
+
+</body>
 </html>
