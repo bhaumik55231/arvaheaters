@@ -23,9 +23,9 @@
         nav {
             display:flex; align-items:center; justify-content:space-between;
             padding:0 80px; background:rgba(255,255,255,0.96); backdrop-filter:blur(14px);
-            position:sticky; top:0; box-shadow:0 2px 15px rgba(0,0,0,0.05); z-index:1000; height: 90px;
+            position:sticky; top:0; box-shadow:0 2px 15px rgba(0,0,0,0.05); z-index:1000; height: 80px;
         }
-        .logo-container img { height: 80px; width: auto; object-fit: contain; }
+        .logo-container img { height: 50px; }
         nav ul { display:flex; gap:35px; list-style:none; }
         nav ul li a {
             position:relative; text-decoration:none; color:var(--text);
@@ -54,7 +54,7 @@
         .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
         .mobile-menu {
-            display:none; position:fixed; top: 90px; left:0; width:100%;
+            display:none; position:fixed; top: 80px; left:0; width:100%;
             background:rgba(255,255,255,0.98); backdrop-filter:blur(14px);
             border-bottom:1px solid var(--border); padding:20px 24px;
             z-index:998; flex-direction:column; gap:0; box-shadow:0 8px 24px rgba(38,50,148,0.08);
@@ -81,7 +81,6 @@
             nav ul { display:none; }
             nav .btn { display:none; }
             .hamburger { display:flex; }
-            .logo-container img { height:58px; }
         }
     </style>
 </head>
